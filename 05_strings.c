@@ -13,8 +13,7 @@ int my_strlen (char *str) {
   while (*str) {
     i ++;
     str ++;
-  }
-  return i;
+  }return i;
 }
 
 char * my_strncpy( char * dest, char * source, int n) {
@@ -30,7 +29,8 @@ char * my_strncpy( char * dest, char * source, int n) {
 }
 
 char * my_strcat( char * dest, char * source){
-  int counter1 = 0;
+  int i = 0;
+  /*int counter1 = 0;
   while (dest[ counter1]){
     counter1 ++;
   }
@@ -40,7 +40,18 @@ char * my_strcat( char * dest, char * source){
     counter2 ++;
     counter1 ++;
   }
-  return dest;
+  return dest;*/
+
+  //using lengths instead:
+  int destlen = my_strlen (dest);
+  int sourlen = my_strlen (source);
+
+  while (i < sourlen){
+    dest[destlen + i] = src[i];
+    i++;
+  } dest[destlen + sourlen] = 0; return dest;
+  
+  
 }
 
 int my_strcmp(char *s1, char *s2) {
