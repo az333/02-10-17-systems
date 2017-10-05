@@ -10,7 +10,10 @@ char * my_strchr( char * s, char c );
 
 int my_strlen (char *str) {
   int i = 0;
-  while (*str ++) i ++;
+  while (*str) {
+    i ++;
+    str ++;
+  }
   return i;
 }
 
