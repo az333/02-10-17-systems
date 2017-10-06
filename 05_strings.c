@@ -76,35 +76,34 @@ int main () {
   char *str5 = "systemsblah";
   char *str4 = "";
 
-  char a1[100];
-  char a2[100];
-  char a3[100];
+  char a1[100] = "angelika";
+  char a2[100] = "zverovich";
+  char a3[100] = "asim";
 
-
-  char a1cpy[] = "angelika";
-  char a2cpy[] = "zverovich";
+  char a1cpy[100] = "angelika";
+  char a2cpy[100] = "zverovich";
 
   //strlen tests
-  printf ("%s is this length: %d\n", str1, my_strlen(str1));
+    //printf ("%s is this length: %d\n", str1, my_strlen(str1));
 
   //strcmp tests
     //printf ("%s compared to %s is %d\n", str4, str4, my_strcmp(str4, str4) );
     //printf ("%s compared to %s is %d\n", str4, str4, strcmp(str4, str4) );
 
   //strncpy tests
-    //printf ("The original source is [%s] and now dest is [%s]\n", a2, my_strncpy(a1, a2,9));
-    //printf ("The original source is [%s] and now dest is [%s]\n", a1cpy, strncpy(a1cpy, a2cpy,9));
+    //printf ("The original source is [%s] and now dest is [%s]\n", a2, my_strncpy(a1, a2,0));
+    //printf ("The original source is [%s] and now dest is [%s]\n", a2cpy, strncpy(a1cpy, a2cpy,0));
 
   //strchr tests
-  printf ("My address is:        %p\n", my_strchr(str1, 'x'));
-  printf ("The real address is: %p\n", strchr(str1, 'x'));
+    //printf ("My address is:        %p\n", my_strchr(str1, 'x'));
+    //printf ("The real address is: %p\n", strchr(str1, 'x'));
 
   //strcat tests
-  my_strcat(a1, a2);
-  printf("a1 IS %s, a2 is %s, a1 WAS %s\n", a1, a2, a1cpy);
+    //my_strcat(a1, a2);
+    //printf("a1 IS %s, a2 is %s, a1 WAS %s\n", a1, a2, a1cpy);
 
   //strncpy tests
-  my_strncpy(a1, a2,3);
-  printf ("Original string: [%s]\n Copy string: [%s]\n  New string: [%s]\n", a1cpy, a2, a1);
+    //my_strncpy(a1, a2,3);
+    //printf ("Original string: [%s]\n Copy string: [%s]\n  New string: [%s]\n", a1cpy, a2, a1);
 
 }
