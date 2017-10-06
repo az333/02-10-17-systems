@@ -9,6 +9,6 @@ clean:
 	rm *~
 
 run: all
-	./05_string.out
+	./05_strings.out
 
 
