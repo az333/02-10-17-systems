@@ -77,7 +77,7 @@ int main () {
 
   char a1cpy[] = "asimkapp    ";
   char a2cpy[] = "zverovich";
-
+  /*
   //strlen tests
   printf("%s is this length: %d\n", str1, my_strlen(str1));
 
@@ -95,6 +95,14 @@ int main () {
 
   //strcat tests
   my_strcat(a1, a2);
-  printf("a1 IS %s, a2 is %s, a1 WAS %s\n", a1, a2, a1cpy);
+  printf("a1 IS %s, a2 is %s, a1 WAS %s\n", a1, a2, a1cpy); */
+
+  printf("testing mystrncpy:\n\n");
+    char mystrcpy1[200]="Rihui";
+    char mystrcpy2[200]= "Sucks ";
+    char strcpy1[200]="Rihui";
+    char strcpy2[200]="Sucks ";
+    printf("source: %s\n", mystrcpy1);
+    printf("dest: %s\n", mystrcpy2);
 
 }
