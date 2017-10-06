@@ -1,5 +1,5 @@
 all: 05_strings.o
-	gcc 05_strings.o -o strings.out
+	gcc 05_strings.o -o 05_strings.out
 
 05_strings.o: 05_strings.c
 	gcc -c 05_strings.c 
@@ -9,6 +9,6 @@ clean:
 	rm *~
 
 run: all
-	./string.out
+	./05_string.out
 
 
