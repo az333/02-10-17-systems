@@ -10,26 +10,45 @@ char * my_strchr( char * s, char c );
 
 int my_strlen (char *str) {
   int i = 0;
-  while (*str ++) i ++;
-  return i;
+  while (*str) {
+    i ++;
+    str ++;
+  }return i;
 }
 
 char * my_strncpy( char * dest, char * source, int n) {
-  char * temp = dest;
-  for (;*source && n; temp++, source++, n--) {
-    //printf ("temp: %c, source: %c\n", *temp, *source);
-    *temp = *source;
+  char * tmp = dest;
+  for (;(*source && n); tmp ++, source ++, n --) {
+    *tmp = * source;
   }
-  while(n--) {
-    *temp++ = 0;
-  }
-  return dest;
+  while( n --) {
+    * tmp ++ = 0;
+  }return dest;
 }
 
 char * my_strcat( char * dest, char * source){
-  char *lastchar = dest + my_strlen(dest);
-  my_strncpy(lastchar,source, my_strlen(source));
-  return dest;
+  int i = 0;
+  /*int counter1 = 0;
+    while (dest[ counter1]){
+    counter1 ++;
+    }
+    int counter2 = 0;
+    while (source[counter2]) {
+    dest[counter1] = source[counter2];
+    counter2 ++;
+    counter1 ++;
+    }
+    return dest;*/
+
+  //using lengths instead:
+  int destlen = my_strlen (dest);
+  int sourlen = my_strlen (source);
+
+  while (i < sourlen){
+    dest[destlen + i] = source[i];      i++;
+  } dest[destlen + sourlen] = 0; return dest;
+
+
 }
 
 int my_strcmp(char *s1, char *s2) {
@@ -64,8 +83,9 @@ int main () {
 
   char a1cpy[] = "angelika";
   char a2cpy[] = "zverovich";
+
   //strlen tests
-    //printf ("%s is this length: %d\n", str1, my_strlen(str1));
+  printf ("%s is this length: %d\n", str1, my_strlen(str1));
 
   //strcmp tests
     //printf ("%s compared to %s is %d\n", str4, str4, my_strcmp(str4, str4) );
@@ -76,12 +96,15 @@ int main () {
     //printf ("The original source is [%s] and now dest is [%s]\n", a1cpy, strncpy(a1cpy, a2cpy,9));
 
   //strchr tests
-    //printf ("My addres is:        %p\n", my_strchr(str1, 'x'));
-    //printf ("The real address is: %p\n", strchr(str1, 'x'));
+  printf ("My address is:        %p\n", my_strchr(str1, 'x'));
+  printf ("The real address is: %p\n", strchr(str1, 'x'));
 
-  //strcat test
-    strcpy(a1,"angelika");
-    strcpy(a2,"zverovich");
-    strcpy(a3,"asim");
-    printf ("str1 IS %s, str2 is %s, str1 WAS %s\n", my_strcat(a1, a2), a2, a1cpy);
+  //strcat tests
+  my_strcat(a1, a2);
+  printf("a1 IS %s, a2 is %s, a1 WAS %s\n", a1, a2, a1cpy);
+
+  //strncpy tests
+  my_strncpy(a1, a2,3);
+  printf ("Original string: [%s]\n Copy string: [%s]\n  New string: [%s]\n", a1cpy, a2, a1);
+
 }
