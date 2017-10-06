@@ -47,8 +47,8 @@ char * my_strcat( char * dest, char * source){
   while (i < sourlen){
     dest[destlen + i] = source[i];      i++;
   } dest[destlen + sourlen] = 0; return dest;
-  
-  
+
+
 }
 
 int my_strcmp(char *s1, char *s2) {
@@ -76,18 +76,24 @@ int main () {
   char *str5 = "systemsblah";
   char *str4 = "";
 
-  char a1[] = "asimkapp     ";
-  char a2[] = "zverovich";
+  char a1[100];
+  char a2[100];
+  char a3[100];
 
-  char a1cpy[] = "asimkapp    ";
+
+  char a1cpy[] = "angelika";
   char a2cpy[] = "zverovich";
 
   //strlen tests
   printf ("%s is this length: %d\n", str1, my_strlen(str1));
 
   //strcmp tests
-  printf ("%s compared to %s is %d\n", str4, str4, my_strcmp(str4, str4) );
-  printf ("%s compared to %s is %d\n", str4, str4, strcmp(str4, str4) );
+    //printf ("%s compared to %s is %d\n", str4, str4, my_strcmp(str4, str4) );
+    //printf ("%s compared to %s is %d\n", str4, str4, strcmp(str4, str4) );
+
+  //strncpy tests
+    //printf ("The original source is [%s] and now dest is [%s]\n", a2, my_strncpy(a1, a2,9));
+    //printf ("The original source is [%s] and now dest is [%s]\n", a1cpy, strncpy(a1cpy, a2cpy,9));
 
   //strchr tests
   printf ("My address is:        %p\n", my_strchr(str1, 'x'));
